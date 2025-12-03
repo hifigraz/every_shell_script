@@ -4,4 +4,7 @@ all:
 
 install:
 	[ -e ${DESTDIR}/bin ] || mkdir -p ${DESTDIR}/bin/
-	install  ./_every_shell_script.sh ${DESTDIR}/bin/_every_shell_script.sh
+	[ -e ${DESTDIR}/share/every_shell_script ] || mkdir -p ${DESTDIR}/share/every_shell_script
+	install -d ./src ${DESTDIR}
+	install ./src/bin/* ${DESTDIR}/bin/
+	install ./src/share/every_shell_script/* ${DESTDIR}/share/every_shell_script/
